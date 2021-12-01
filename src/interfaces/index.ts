@@ -26,6 +26,7 @@ export interface IBot extends Client<true> {
 // ----------------------------------------------------------------
 export interface IBotConfig {
   readonly token: string;
+  readonly uri: string;
 }
 
 // ----------------------------------------------------------------
@@ -35,7 +36,12 @@ export interface IDB {
   logger: winston.Logger;
   pool: Pool;
 
-  init() : Promise<void>
+  init() : Promise<void>;
+  close() : Promise<void>;
+  fetch(sql: string, values : []) : Promise<object[] | null>;
+  fetchOne(sql: string, values: []) : Promise<object | null>;
+  execute(sql: string, values: []) : Promise<void>;
+  executeMany(sqlArray: string[], valArray: []) : Promise<void>
 }
 // ----------------------------------------------------------------
 //                         Command Handler
