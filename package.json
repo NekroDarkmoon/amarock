@@ -3,26 +3,21 @@
   "version": "1.0.0",
   "description": "A discord bot for the ttrpg LevelUp: A5E",
   "main": "dist/index.js",
-  
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only --poll ./src/index.ts",
     "build": "tsc -b",
     "lint": "eslint --cache \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint --cache --fix \"src/**/*.{ts,tsx}\""
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NekroDarkmoon/amarok.git"
   },
-
   "author": "NekroDarkmoon",
   "license": "MIT",
-
   "bugs": {
     "url": "https://github.com/NekroDarkmoon/amarok/issues"
   },
-
   "homepage": "https://github.com/NekroDarkmoon/amarok#readme",
   "devDependencies": {
     "@types/node": "^16.11.11",
@@ -40,13 +35,12 @@
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.2"
   },
-
   "lint-staged": {
     "*.{ts,tsx}": "yarn lint:fix"
   },
-
   "dependencies": {
     "@discordjs/rest": "^0.1.0-canary.0",
+    "@types/pg": "^8.6.1",
     "discord-api-types": "^0.25.2",
     "discord.js": "^13.3.1",
     "pg": "^8.7.1",
