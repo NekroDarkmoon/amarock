@@ -24,7 +24,7 @@ async function main () : Promise<void> {
 
   // Setup DB
   const db = new AmarokDB(config.uri, logger);
-  // db.init();
+  db.init();
 	logger.info('DB initiated');
 
   const amarock: IBot = new Amarok(config, db, logger);
